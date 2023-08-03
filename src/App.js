@@ -1,25 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import NavbarCMP from "./components/navbar";
+import Frontend from "./pages/frontend";
+import Backend from "./pages/backend";
+import { Route, Routes } from "react-router-dom";
+export default function App() {
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return <>
+        <NavbarCMP />
+        <Routes>
+            <Route path="/" element={<Frontend />} />
+            <Route path="/all-forms" element={<Backend />} />
+        </Routes>
+    </>
 }
-
-export default App;
